@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 class MainActivity : AppCompatActivity() {
     private var currentIndex = 0
     private val instruments = listOf(
-        Instrument("Guitar", 4.5f, "String", 100),
+        Instrument("Guitarr", 4.5f, "String", 100),
         Instrument("Violin", 4.8f, "String", 80),
         Instrument("Drum", 4.3f, "Percussion", 90)
     )
