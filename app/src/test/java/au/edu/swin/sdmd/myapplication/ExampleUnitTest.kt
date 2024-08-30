@@ -1,4 +1,4 @@
-package au.edu.swin.sdmd.riffrentalapplication
+package au.edu.swin.sdmd.myapplication
 
 import org.junit.Test
 

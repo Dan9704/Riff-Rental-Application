@@ -1,6 +1,3 @@
 <resources>
-    <string name="app_name">Riff Rental Application</string>
-    <string name="instrument_name">Instrument Name</string>
-    <string name="price">Price</string>
-    <string name="next">Next</string>
+    <string name="app_name">My Application</string>
 </resources>

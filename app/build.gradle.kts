@@ -1,16 +1,15 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    id("kotlin-parcelize")
+
 }
 
-
 android {
-    namespace = "au.edu.swin.sdmd.riffrentalapplication"
+    namespace = "au.edu.swin.sdmd.myapplication"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "au.edu.swin.sdmd.riffrentalapplication"
+        applicationId = "au.edu.swin.sdmd.myapplication"
         minSdk = 27
         targetSdk = 34
         versionCode = 1
@@ -38,6 +37,7 @@ android {
 }
 
 dependencies {
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -46,7 +46,4 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
-    implementation("com.squareup.picasso:picasso:2.71828")
-
 }
