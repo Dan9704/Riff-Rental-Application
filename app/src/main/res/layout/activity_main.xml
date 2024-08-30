@@ -1,40 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:ignore="ExtraText">
+
+    <!-- Replace 'sample_guitar' with your actual image resource --><![CDATA[
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+
+
+
+
+    ]]>
+
+    <ImageView
+        android:id="@+id/imageViewInstrument"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:src="@drawable/sample_guitar"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-98dp"
+        tools:layout_editor_absoluteY="51dp" />
+
+    <!-- Replace with dynamic data as necessary --><![CDATA[
+    android:textSize="18sp"
+    android:textStyle="bold"
+    app:layout_constraintTop_toBottomOf="@id/imageViewInstrument"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+    ]]>
 
     <TextView
         android:id="@+id/textViewName"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="18sp"/>
+        android:text="Guitar"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="75dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <!-- Replace with dynamic data as necessary --><![CDATA[
+    android:textSize="16sp"
+    app:layout_constraintTop_toBottomOf="@id/ratingBar"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent" />
+
+    ]]><!-- Replace with dynamic data as necessary --><![CDATA[
+    android:textSize="16sp"
+    app:layout_constraintTop_toBottomOf="@id/textViewType"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent" />
+
+    ]]>
 
     <RatingBar
         android:id="@+id/ratingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="236dp"
         android:numStars="5"
-        android:stepSize="0.5"
-        android:layout_marginVertical="8dp"/>
+        android:rating="4.5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewName" />
 
     <TextView
         android:id="@+id/textViewType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"/>
+        android:text="Type: String"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="259dp"
+        tools:layout_editor_absoluteY="67dp" />
 
     <TextView
         android:id="@+id/textViewPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"/>
+        android:text="Price: 100 credits"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="231dp"
+        tools:layout_editor_absoluteY="16dp" />
 
     <Button
         android:id="@+id/buttonNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Next Instrument"
-        android:layout_marginTop="16dp"/>
-</LinearLayout>
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
