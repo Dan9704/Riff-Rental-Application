@@ -4,101 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:ignore="ExtraText">
-
-    <!-- Replace 'sample_guitar' with your actual image resource --><![CDATA[
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent" />
-
-
-
-
-
-
-
-    ]]>
+    android:padding="16dp">
 
     <ImageView
         android:id="@+id/imageViewInstrument"
         android:layout_width="0dp"
-        android:layout_height="200dp"
+        android:layout_height="300dp"
         android:src="@drawable/sample_guitar"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="-98dp"
-        tools:layout_editor_absoluteY="51dp" />
-
-    <!-- Replace with dynamic data as necessary --><![CDATA[
-    android:textSize="18sp"
-    android:textStyle="bold"
-    app:layout_constraintTop_toBottomOf="@id/imageViewInstrument"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent" />
-
-
-
-    ]]>
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
         android:id="@+id/textViewName"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Guitar"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="75dp"
-        tools:layout_editor_absoluteY="16dp" />
-
-    <!-- Replace with dynamic data as necessary --><![CDATA[
-    android:textSize="16sp"
-    app:layout_constraintTop_toBottomOf="@id/ratingBar"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent" />
-
-    ]]><!-- Replace with dynamic data as necessary --><![CDATA[
-    android:textSize="16sp"
-    app:layout_constraintTop_toBottomOf="@id/textViewType"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent" />
-
-    ]]>
+        android:text="@string/guitar"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/imageViewInstrument"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <RatingBar
         android:id="@+id/ratingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="236dp"
         android:numStars="5"
         android:rating="4.5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintTop_toBottomOf="@id/textViewName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewName" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
         android:id="@+id/textViewType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Type: String"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="259dp"
-        tools:layout_editor_absoluteY="67dp" />
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/ratingBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
         android:id="@+id/textViewPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Price: 100 credits"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="231dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/textViewType"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <Button
         android:id="@+id/buttonNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Next Instrument"
-        android:layout_marginTop="16dp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
