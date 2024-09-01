@@ -8,7 +8,8 @@ data class Instrument(
     val name: String,
     val rating: Float,
     val type: String,
-    val pricePerMonth: Int
+    val pricePerMonth: Int,
+    val imageResId: Int
 ) : Parcelable {
     override fun describeContents(): Int {
         TODO("Not yet implemented")
