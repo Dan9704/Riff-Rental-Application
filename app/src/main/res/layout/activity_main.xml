@@ -10,7 +10,6 @@
         android:id="@+id/imageViewInstrument"
         android:layout_width="0dp"
         android:layout_height="300dp"
-        android:src="@drawable/sample_guitar"
         android:scaleType="fitCenter"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
