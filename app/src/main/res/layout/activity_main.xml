@@ -81,12 +81,12 @@
             android:id="@+id/chip1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="String" />
+            android:text="Base" />
         <com.google.android.material.chip.Chip
             android:id="@+id/chip2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Woodwind" />
+            android:text="HighEnd" />
     </com.google.android.material.chip.ChipGroup>
 
 

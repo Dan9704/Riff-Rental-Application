@@ -49,8 +49,8 @@ class MainActivity : AppCompatActivity() {
         chipGroup.setOnCheckedChangeListener { group, checkedId ->
             // You could extend this to modify the instrument type based on selection
             typeTextView.text = when(checkedId) {
-                R.id.chip1 -> "Type: String"
-                R.id.chip2 -> "Type: Woodwind"
+                R.id.chip1 -> "Type: Base"
+                R.id.chip2 -> "Type: HighEnd"
                 else -> "Type: ${instruments[currentIndex].type}"
             }
         }
