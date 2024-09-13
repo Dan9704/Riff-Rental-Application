@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#CCCCCC</color>  <!-- Example grey color for unselected stars -->
     <color name="yellow">#FFEB3B</color>  <!-- Yellow color for selected stars -->
+    <color name="selected_color">#FF6200EE</color> <!-- Color when selected -->
+    <color name="unselected_color">#E0E0E0</color> <!-- Default color when unselected -->
 </resources>

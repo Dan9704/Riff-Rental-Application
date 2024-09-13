@@ -1,31 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:ignore="ExtraText"
+    android:background="@drawable/background_image">
 
+    <!-- Search Bar on Top -->
+    <EditText
+        android:id="@+id/searchBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Search instruments..."
+        android:padding="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Filter Button Next to Search Bar -->
+    <Button
+        android:id="@+id/buttonFilter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Filter"
+        app:layout_constraintTop_toTopOf="@id/searchBar"
+        app:layout_constraintBottom_toBottomOf="@id/searchBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="8dp"/>
+
+    <!-- Instrument Image Below the Search Bar -->
     <ImageView
         android:id="@+id/imageViewInstrument"
         android:layout_width="0dp"
         android:layout_height="300dp"
         android:scaleType="fitCenter"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchBar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 
+    <!-- Favorite Button Positioned Over the Image -->
+    <ImageView
+        android:id="@+id/imageViewFavorite"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="8dp"
+        android:src="@drawable/ic_heart_outline"
+        app:layout_constraintTop_toTopOf="@id/imageViewInstrument"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="Favorite Button"/>
+
+    <!-- Instrument Name -->
     <TextView
         android:id="@+id/textViewName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/guitar"
+        android:text="Name: Guitar"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/imageViewInstrument"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- Rating Bar -->
     <RatingBar
         android:id="@+id/ratingBar"
         android:layout_width="wrap_content"
@@ -37,6 +78,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- Type Information -->
     <TextView
         android:id="@+id/textViewType"
         android:layout_width="wrap_content"
@@ -47,6 +89,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- Price Information -->
     <TextView
         android:id="@+id/textViewPrice"
         android:layout_width="wrap_content"
@@ -57,39 +100,72 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- Previous and Next Image Buttons -->
     <Button
-        android:id="@+id/buttonNext"
+        android:id="@+id/buttonPrevImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/next_instrument"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Previous"
+        app:layout_constraintTop_toBottomOf="@id/textViewPrice"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_marginTop="16dp"/>
 
+    <Button
+        android:id="@+id/buttonNextImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        app:layout_constraintTop_toBottomOf="@id/textViewPrice"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 
+    <!-- Play Sound Button in the Middle of Previous and Next Button -->
+    <Button
+        android:id="@+id/buttonPlaySound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play Sound"
+        app:layout_constraintTop_toBottomOf="@id/textViewPrice"
+        app:layout_constraintStart_toEndOf="@id/buttonPrevImage"
+        app:layout_constraintEnd_toStartOf="@id/buttonNextImage"
+        android:layout_marginTop="16dp"/>
 
-<!--    this part is for multichoice -->
+    <!-- Chip Group for Condition Selection -->
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chipGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/textViewPrice"
+        app:layout_constraintTop_toBottomOf="@id/buttonPrevImage"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:singleSelection="true">
+
         <com.google.android.material.chip.Chip
             android:id="@+id/chip1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Base" />
+            android:text="New"
+            app:checkedIconVisible="false"
+            style="@style/Widget.MaterialComponents.Chip.Choice"/>
+
         <com.google.android.material.chip.Chip
             android:id="@+id/chip2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="HighEnd" />
+            android:text="Used"
+            app:checkedIconVisible="false"
+            style="@style/Widget.MaterialComponents.Chip.Choice"/>
     </com.google.android.material.chip.ChipGroup>
 
-
-
-
+    <!-- Next Instrument Button Centered at the Bottom -->
+    <Button
+        android:id="@+id/buttonNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next Instrument"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/chipGroup"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

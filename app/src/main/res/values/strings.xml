@@ -2,4 +2,8 @@
     <string name="app_name">My Application</string>
     <string name="guitar">Guitar</string>
     <string name="next_instrument">Next Instrument</string>
+    <string name="New">New</string>
+    <string name="Used">Used</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
 </resources>
