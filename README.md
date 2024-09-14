@@ -1,7 +1,3 @@
-Sure! Below is a sample README file for your Android project. This README provides a structured overview of your app, including its features, setup instructions, and more.
-
----
-
 # Riff Rental App
 
 Riff Rental is an Android application that allows users to browse, listen to, and borrow musical instruments. The app provides detailed information on each instrument, allowing users to experience sample sounds and book their favorite instruments with ease.
@@ -91,7 +87,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-For any inquiries, please contact [your email](mailto:youremail@example.com).
+For any inquiries, please contact [your email](mailto:tungduong9704@gmail.com).
 
 ---
 
