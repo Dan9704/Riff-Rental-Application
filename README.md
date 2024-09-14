@@ -15,8 +15,7 @@ Riff Rental is an Android application that allows users to browse, listen to, an
 
 ## Screenshots
 
-![Main Screen](screenshots/main_screen.png)
-![Borrow Screen](screenshots/borrow_screen.png)
+Loading ...
 
 ## Installation
 
