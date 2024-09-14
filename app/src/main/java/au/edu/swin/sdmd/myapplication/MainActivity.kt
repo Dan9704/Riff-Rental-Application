@@ -1,5 +1,6 @@
 package au.edu.swin.sdmd.myapplication
 
+import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.text.Editable
@@ -33,22 +34,30 @@ class MainActivity : AppCompatActivity() {
     private var currentImageIndex = 0
     private var mediaPlayer: MediaPlayer? = null
     private val instruments = listOf(
-        Instrument("Guitar", 4.5f, "String", 100, 75,
+        Instrument(
+            "Guitar", 4.5f, "String", 100, 75,
             listOf(R.drawable.guitar_new, R.drawable.guitar_new1, R.drawable.guitar_new2),
             listOf(R.drawable.guitar_used, R.drawable.guitar_used1, R.drawable.guitar_used2),
-            R.raw.guitar_sound),
-        Instrument("Violin", 4.0f, "String", 80, 60,
+            R.raw.guitar_sound
+        ),
+        Instrument(
+            "Violin", 4.0f, "String", 80, 60,
             listOf(R.drawable.violin_new, R.drawable.violin_new1, R.drawable.violin_new2),
             listOf(R.drawable.violin_used, R.drawable.violin_used1, R.drawable.violin_used2),
-            R.raw.violin_sound),
-        Instrument("Drum", 3.5f, "Percussion", 90, 70,
+            R.raw.violin_sound
+        ),
+        Instrument(
+            "Drum", 3.5f, "Percussion", 90, 70,
             listOf(R.drawable.drum_new, R.drawable.drum_new1, R.drawable.drum_new2),
             listOf(R.drawable.drum_used, R.drawable.drum_used1, R.drawable.drum_used2),
-            R.raw.drum_sound),
-        Instrument("Flute", 5.0f, "Woodwind", 95, 65,
+            R.raw.drum_sound
+        ),
+        Instrument(
+            "Flute", 5.0f, "Woodwind", 95, 65,
             listOf(R.drawable.flute_new, R.drawable.flute_new1, R.drawable.flute_new2),
             listOf(R.drawable.flute_used, R.drawable.flute_used1, R.drawable.flute_used2),
-            R.raw.flute_sound)
+            R.raw.flute_sound
+        )
     )
     private var filteredInstruments = instruments.toMutableList() // List to hold filtered results
 
@@ -65,6 +74,7 @@ class MainActivity : AppCompatActivity() {
         val chipGroup: ChipGroup = findViewById(R.id.chipGroup)
         val favoriteButton: ImageView = findViewById(R.id.imageViewFavorite)
         val searchBar: EditText = findViewById(R.id.searchBar)
+        val borrowButton: Button = findViewById(R.id.buttonBorrow)
 
         updateUI()
 
@@ -111,6 +121,27 @@ class MainActivity : AppCompatActivity() {
 
             override fun afterTextChanged(s: Editable?) {}
         })
+
+        // Implement the Borrow button and set up the click listener
+        borrowButton.setOnClickListener {
+            // Prepare data to send
+            val currentInstrument = filteredInstruments[currentIndex]
+
+            val intent = Intent(this, BorrowActivity::class.java).apply {
+                putExtra("instrument_name", currentInstrument.name)
+                putExtra(
+                    "instrument_price",
+                    if (currentCondition == "New") currentInstrument.newPrice else currentInstrument.usedPrice
+                )
+                putExtra("instrument_type", "Type: ${currentInstrument.type}")
+                putExtra("instrument_rating", currentInstrument.rating)
+                putExtra(
+                    "instrument_image_res",
+                    if (currentCondition == "New") currentInstrument.newImages[0] else currentInstrument.usedImages[0]
+                )
+            }
+            startActivity(intent)
+        }
     }
 
     private fun filterInstruments(query: String) {
@@ -172,7 +203,8 @@ class MainActivity : AppCompatActivity() {
             val instrument = filteredInstruments[currentIndex]
             val imageView: ImageView = findViewById(R.id.imageViewInstrument)
             val favoriteButton: ImageView = findViewById(R.id.imageViewFavorite)
-            val images = if (currentCondition == "New") instrument.newImages else instrument.usedImages
+            val images =
+                if (currentCondition == "New") instrument.newImages else instrument.usedImages
             imageView.setImageResource(images[currentImageIndex])
 
             findViewById<TextView>(R.id.textViewName).text = "Name: ${instrument.name}"
@@ -188,7 +220,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun navigateImage(direction: Int) {
         val instrument = filteredInstruments[currentIndex]
-        val images = if (currentCondition == "New") instrument.newImages else instrument.usedImages
+        val images =
+            if (currentCondition == "New") instrument.newImages else instrument.usedImages
         currentImageIndex = (currentImageIndex + direction + images.size) % images.size
         updateUI()
     }

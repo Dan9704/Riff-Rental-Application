@@ -168,4 +168,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"/>
+
+    <!-- Borrow button below the Next Instrument Button -->
+    <Button
+        android:id="@+id/buttonBorrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Borrow"
+        app:layout_constraintTop_toBottomOf="@id/buttonPlaySound"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="130dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
