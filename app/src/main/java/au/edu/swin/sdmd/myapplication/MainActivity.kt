@@ -129,14 +129,12 @@ class MainActivity : AppCompatActivity() {
 
             val intent = Intent(this, BorrowActivity::class.java).apply {
                 putExtra("instrument_name", currentInstrument.name)
-                putExtra(
-                    "instrument_price",
+                putExtra("instrument_price",
                     if (currentCondition == "New") currentInstrument.newPrice else currentInstrument.usedPrice
                 )
                 putExtra("instrument_type", "Type: ${currentInstrument.type}")
                 putExtra("instrument_rating", currentInstrument.rating)
-                putExtra(
-                    "instrument_image_res",
+                putExtra("instrument_image_res",
                     if (currentCondition == "New") currentInstrument.newImages[0] else currentInstrument.usedImages[0]
                 )
             }

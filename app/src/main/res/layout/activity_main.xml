@@ -21,17 +21,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Filter Button Next to Search Bar -->
-    <Button
-        android:id="@+id/buttonFilter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Filter"
-        app:layout_constraintTop_toTopOf="@id/searchBar"
-        app:layout_constraintBottom_toBottomOf="@id/searchBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="8dp"/>
-
     <!-- Instrument Image Below the Search Bar -->
     <ImageView
         android:id="@+id/imageViewInstrument"

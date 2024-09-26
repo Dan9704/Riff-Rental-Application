@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="bookingListView" type="id" />
+    <item name="buttonBackToBorrow" type="id" />
+    <item name="textViewUserName" type="id" />
+    <item name="textViewUserEmail" type="id" />
+</resources>

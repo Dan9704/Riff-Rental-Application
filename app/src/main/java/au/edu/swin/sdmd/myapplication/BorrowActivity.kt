@@ -1,5 +1,6 @@
 package au.edu.swin.sdmd.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -44,7 +45,7 @@ class BorrowActivity : AppCompatActivity() {
             if (name.isEmpty() || email.isEmpty()) {
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
             } else {
-                // Here you could save the user's information if needed
+                // Save booking
                 Toast.makeText(this, "Submission successful", Toast.LENGTH_SHORT).show()
             }
         }
